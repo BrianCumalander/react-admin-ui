@@ -22,8 +22,8 @@ const Layout = ()=>{
           <Menu />
         </div>
         <div className="contentContainer">
-        </div>
         <Outlet />
+        </div>
       </div>
     <Footer/>
     </div>

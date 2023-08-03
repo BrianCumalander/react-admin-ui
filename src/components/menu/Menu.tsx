@@ -2,7 +2,7 @@ import "./menu.scss"
 import { Link } from "react-router-dom"
 import { menu } from "../../data"
 
-// left menu column data comes from the data.ts JSON formatted file (import menu from ....noted above)
+// left menu column data comes from the data.ts JSON formatted file (import menu from ....noted above).
  const Menu = () => {
   return (
     <div className="menu">
