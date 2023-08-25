@@ -184,7 +184,7 @@ export const menu = [
       { name: "Sat", users: 450 },
     ],
   };
-  
+   
   export const chartBoxProduct = {
     color: "skyblue",
     icon: "/productIcon.svg",
