@@ -1,4 +1,5 @@
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts"
+import "./pieChartBox.scss"
 
 //define our values that we will pass to the pie chart
 const data = [
@@ -16,10 +17,7 @@ const PieChartBox = () => {
         <div className="chart">
             <ResponsiveContainer width="99%" height={300}>
                 <PieChart>
-                    
-                    
                     <Tooltip contentStyle={{backgroundColor: "white", borderRadius: "5px"}} />
-                   
                     <Pie
                         data={data} //passing in our values via 'data'
                         // cx={120} //x position, remove to center
@@ -36,14 +34,11 @@ const PieChartBox = () => {
                             fill={item.color} 
                         />
                     ))}
-                    
                     </Pie>
                 </PieChart>
             </ResponsiveContainer>
         </div>
 
-
-        
         <div className="options">
             {data.map(item=>(
                 <div className="option" key={item.name}>
@@ -54,26 +49,9 @@ const PieChartBox = () => {
                     <span>{item.value}</span>
                 </div>
             ))}
-            
-            </div>
-        <div className="test">underneath</div>
+        </div>
     </div>
     )
 }
 
 export default PieChartBox
-
-
-
-
-{/* <div className="options">
-                {data.map(item=> (
-                    <div className="option" key={item.name}>
-                        <div className="title">
-                            <div className="dot" />
-                            <span>{item.name}</span>
-                        </div>
-                    </div>
-                    ))}
-            </div>
-        </div> */}
