@@ -16,12 +16,10 @@ const PieChartBox = () => {
         <div className="chart">
             <ResponsiveContainer width="99%" height={300}>
                 <PieChart>
-                    {data.map((item) => (
-                        <Tooltip
-                          contentStyle={{backgroundColor: item.color, borderRadius: "5px"}}
-                         />
-                    ))}
                     
+                    
+                    <Tooltip contentStyle={{backgroundColor: "white", borderRadius: "5px"}} />
+                   
                     <Pie
                         data={data} //passing in our values via 'data'
                         // cx={120} //x position, remove to center
@@ -38,8 +36,8 @@ const PieChartBox = () => {
                             fill={item.color} 
                         />
                     ))}
-                    </Pie>
                     
+                    </Pie>
                 </PieChart>
             </ResponsiveContainer>
         </div>
