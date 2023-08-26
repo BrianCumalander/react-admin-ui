@@ -1,5 +1,4 @@
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts"
-import { SassColor } from "sass";
 
 //define our values that we will pass to the pie chart
 const data = [
@@ -7,7 +6,7 @@ const data = [
     { name: 'Group B', value: 300, color: '#00C49F' },
     { name: 'Group C', value: 300, color: '#FFBB28' },
     { name: 'Group D', value: 200, color: '#FF8042' },
-  ];
+];
 
 
 const PieChartBox = () => {
@@ -17,9 +16,12 @@ const PieChartBox = () => {
         <div className="chart">
             <ResponsiveContainer width="99%" height={300}>
                 <PieChart>
-                    <Tooltip
-                         contentStyle={{background: "white", borderRadius: "5px"}}
-                    />
+                    {data.map((item) => (
+                        <Tooltip
+                          contentStyle={{backgroundColor: item.color, borderRadius: "5px"}}
+                         />
+                    ))}
+                    
                     <Pie
                         data={data} //passing in our values via 'data'
                         // cx={120} //x position, remove to center
@@ -37,12 +39,43 @@ const PieChartBox = () => {
                         />
                     ))}
                     </Pie>
+                    
                 </PieChart>
             </ResponsiveContainer>
-            
         </div>
+
+
+        
+        <div className="options">
+            {data.map(item=>(
+                <div className="option" key={item.name}>
+                    <div className="title">
+                        <div className="dot" style={{ backgroundColor: item.color }} />
+                        <span>{item.name}</span>
+                    </div>
+                    <span>{item.value}</span>
+                </div>
+            ))}
+            
+            </div>
+        <div className="test">underneath</div>
     </div>
     )
 }
 
 export default PieChartBox
+
+
+
+
+{/* <div className="options">
+                {data.map(item=> (
+                    <div className="option" key={item.name}>
+                        <div className="title">
+                            <div className="dot" />
+                            <span>{item.name}</span>
+                        </div>
+                    </div>
+                    ))}
+            </div>
+        </div> */}
