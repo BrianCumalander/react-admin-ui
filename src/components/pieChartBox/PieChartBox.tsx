@@ -3,10 +3,10 @@ import "./pieChartBox.scss"
 
 //define our values that we will pass to the pie chart
 const data = [
-    { name: 'Group A', value: 400, color: '#0088FE' },
-    { name: 'Group B', value: 300, color: '#00C49F' },
-    { name: 'Group C', value: 300, color: '#FFBB28' },
-    { name: 'Group D', value: 200, color: '#FF8042' },
+    { name: 'Mobile', value: 400, color: '#0088FE' },
+    { name: 'Desktop', value: 300, color: '#00C49F' },
+    { name: 'Laptop', value: 300, color: '#FFBB28' },
+    { name: 'Tablet', value: 200, color: '#FF8042' },
 ];
 
 
@@ -15,7 +15,7 @@ const PieChartBox = () => {
     <div className="pieChartBox">
         <h1>Leads by Source</h1>
         <div className="chart">
-            <ResponsiveContainer width="99%" height={300}>
+            <ResponsiveContainer width="100%" height={300}>
                 <PieChart>
                     <Tooltip contentStyle={{backgroundColor: "white", borderRadius: "5px"}} />
                     <Pie
@@ -42,10 +42,12 @@ const PieChartBox = () => {
         <div className="options">
             {data.map(item=>(
                 <div className="option" key={item.name}>
+                   
                     <div className="title">
                         <div className="dot" style={{ backgroundColor: item.color }} />
                         <span>{item.name}</span>
                     </div>
+
                     <span>{item.value}</span>
                 </div>
             ))}
